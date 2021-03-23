@@ -1,0 +1,2 @@
+修改遊戲畫面在gamelib.h
+修改loading 條顏色在 CBrush b2(RGB(255,0,0)) gamelib.h
