@@ -62,14 +62,6 @@ END
 // Bitmap
 //
 
-IDB_BALL                BITMAP                  "..\\res\\ball.bmp"
-
-IDB_ERASER1             BITMAP                  "..\\res\\eraser1.bmp"
-
-IDB_BACKGROUND          BITMAP                  "..\\res\\ntutcsie.bmp"
-
-IDB_CORNER              BITMAP                  "..\\res\\corner.bmp"
-
 IDB_0                   BITMAP                  "..\\res\\bmp0.bmp"
 
 IDB_1                   BITMAP                  "..\\res\\bmp1.bmp"
@@ -92,21 +84,31 @@ IDB_9                   BITMAP                  "..\\res\\bmp9.bmp"
 
 IDB_MINUS               BITMAP                  "..\\res\\bmp10.bmp"
 
-IDB_CENTER              BITMAP                  "..\\res\\center.bmp"
-
-IDB_ERASER2             BITMAP                  "..\\res\\eraser2.bmp"
-
-IDB_ERASER3             BITMAP                  "..\\res\\eraser3.bmp"
-
 IDB_CONTINUE            BITMAP                  "..\\res\\continue.bmp"
 
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
-IDB_LOGIN1              BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP\\C++ OOP\\RES\\Login1.bmp"
+IDB_BEGIN               BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\Begin.bmp"
 
-IDB_LOGIN2              BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP\\C++ OOP\\RES\\Login2.bmp"
+IDB_MENU                BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\Menu.bmp"
 
-IDB_BEGIN               BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP\\C++ OOP\\RES\\Begin.bmp"
+IDB_PLAYER              BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\player.bmp"
+
+IDB_GAMETRACK           BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\gametrack.bmp"
+
+IDB_C1                  BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\c1_1.bmp"
+
+IDB_C2                  BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\c1_2.bmp"
+
+IDB_C3                  BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\c1_3.bmp"
+
+IDB_MENULEVEL1          BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\LEVEL1.bmp"
+
+IDB_MENULEVEL2          BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\LEVEL2.bmp"
+
+IDB_MENULEVEL3          BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\LEVEL3.bmp"
+
+IDB_MENULEVEL4          BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\LEVEL4.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

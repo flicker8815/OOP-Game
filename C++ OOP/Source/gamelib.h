@@ -66,11 +66,11 @@
 // 定義遊戲可設定的環境與條件
 /////////////////////////////////////////////////////////////////////////////
 
-#define SIZE_X				 1200		// 設定遊戲畫面的解析度為640x480
-#define SIZE_Y				 468		// 註：若不使用標準的解析度，則不能切換到全螢幕
+#define SIZE_X				 1768		// 設定遊戲畫面的解析度為640x480
+#define SIZE_Y				 992		// 註：若不使用標準的解析度，則不能切換到全螢幕
 #define OPEN_AS_FULLSCREEN	 false		// 是否以全螢幕方式開啟遊戲
 #define SHOW_LOAD_PROGRESS   true		// 是否顯示loading(OnInit)的進度
-//#define DEFAULT_BG_COLOR	 RGB(0,0,0)	// 遊戲畫面預設的背景顏色(黑色)
+#define DEFAULT_BG_COLOR	 RGB(0,0,0)	// 遊戲畫面預設的背景顏色(黑色)
 #define GAME_CYCLE_TIME		 33		    // 每33ms跑一次Move及Show(每秒30次)
 #define SHOW_GAME_CYCLE_TIME false		// 是否在debug mode顯示cycle time
 #define ENABLE_GAME_PAUSE	 true		// 是否允許以 Ctrl-Q 暫停遊戲
@@ -234,6 +234,7 @@ public:
 	void  SetTopLeft(int,int);		// 將動畫的左上角座標移至 (x,y)
 	int   Top();					// 取得動畫的左上角的 y 座標
 	int   Width();					// 取得動畫的寬度
+	void  SwitchImage();			// Switch player's pic if space down
 private:
 	list<CMovingBitmap>				bmp;			// list of CMovingBitmap
 	list<CMovingBitmap>::iterator	bmp_iter;		// list iterator

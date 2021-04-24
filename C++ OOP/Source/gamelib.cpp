@@ -234,6 +234,14 @@ int CAnimation::Width()
 	return bmp_iter->Width();
 }
 
+void CAnimation::SwitchImage() {
+	bmp_iter++;
+	bmp_counter++;
+	if (bmp_iter == bmp.end()) {
+		bmp_iter = bmp.begin();
+		bmp_counter = 0;
+	}
+}
 /////////////////////////////////////////////////////////////////////////////
 // CInteger: 這個class提供顯示整數圖形的能力
 // 1. 要懂得怎麼呼叫(運用)其各種能力，但是可以不懂下列的程式是什麼意思
@@ -443,13 +451,13 @@ void CGameState::ShowInitProgress(int percent)
 	//CDDraw::BltBackColor(DEFAULT_BG_COLOR);		// 將 Back Plain 塗上預設的顏色
 	CMovingBitmap loading;						// 貼上loading圖示
 	CMovingBitmap beginning;
-	loading.LoadBitmap(IDB_LOADING, RGB(0,0,0));
 	beginning.LoadBitmap(IDB_BEGIN, RGB(0, 0, 0));
-	loading.SetTopLeft((SIZE_X - loading.Width())/2, y1 - 2 * loading.Height());
-	loading.ShowBitmap();
+	loading.LoadBitmap(IDB_LOADING, RGB(0,0,0));
 
-	beginning.SetTopLeft(0, 0);
+	beginning.SetTopLeft(1, 1);
 	beginning.ShowBitmap();
+	loading.SetTopLeft((SIZE_X - loading.Width()) / 2, y1 - 2 * loading.Height());
+	loading.ShowBitmap();
 	//
 	// 以下為CDC的用法
 	//

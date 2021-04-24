@@ -94,6 +94,7 @@
     <None Include="res\Toolbar.bmp">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp">
@@ -120,13 +121,13 @@
     <ClCompile Include="Source\mygame.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CEraser.cpp">
+    <ClCompile Include="Source\CPlayer.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CBall.cpp">
+    <ClCompile Include="Source\CGamemap.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CBouncingBall.cpp">
+    <ClCompile Include="Source\CMenu.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -158,13 +159,13 @@
     <ClInclude Include="Source\mygame.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CEraser.h">
+    <ClInclude Include="Source\CPlayer.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CBall.h">
+    <ClInclude Include="Source\CGamemap.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CBouncingBall.h">
+    <ClInclude Include="Source\CMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -174,16 +175,37 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\bitmap3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Login1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Login2.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="RES\Begin.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Menu.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\gametrack.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\c1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\c1_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\c1_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\LEVEL1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\LEVEL2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\LEVEL3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\LEVEL4.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

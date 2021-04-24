@@ -23,6 +23,7 @@
     <RootNamespace>game</RootNamespace>
     <Keyword>MFCProj</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>game</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="Configuration">
@@ -108,7 +109,7 @@
       <ObjectFileName>.\Debug/</ObjectFileName>
       <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
@@ -229,6 +230,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="cpp.hint" />
     <None Include="Res\ball.bmp" />
     <None Include="RES\bmp0.bmp" />
     <None Include="RES\bmp1.bmp" />
@@ -258,9 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp" />
-    <ClCompile Include="Source\CBall.cpp" />
-    <ClCompile Include="Source\CBouncingBall.cpp" />
-    <ClCompile Include="Source\CEraser.cpp" />
+    <ClCompile Include="Source\CGamemap.cpp" />
+    <ClCompile Include="Source\CMenu.cpp" />
+    <ClCompile Include="Source\CPlayer.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -304,9 +306,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h" />
-    <ClInclude Include="Source\CBall.h" />
-    <ClInclude Include="Source\CBouncingBall.h" />
-    <ClInclude Include="Source\CEraser.h" />
+    <ClInclude Include="Source\CGamemap.h" />
+    <ClInclude Include="Source\CMenu.h" />
+    <ClInclude Include="Source\CPlayer.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />
@@ -325,9 +327,16 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="RES\Begin.bmp" />
-    <Image Include="res\bitmap3.bmp" />
-    <Image Include="RES\Login1.bmp" />
-    <Image Include="RES\Login2.bmp" />
+    <Image Include="RES\c1_1.bmp" />
+    <Image Include="RES\c1_2.bmp" />
+    <Image Include="RES\c1_3.bmp" />
+    <Image Include="RES\gametrack.bmp" />
+    <Image Include="RES\LEVEL1.bmp" />
+    <Image Include="RES\LEVEL2.bmp" />
+    <Image Include="RES\LEVEL3.bmp" />
+    <Image Include="RES\LEVEL4.bmp" />
+    <Image Include="RES\Menu.bmp" />
+    <Image Include="RES\player.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
