@@ -208,5 +208,8 @@
     <Image Include="RES\LEVEL4.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\TRACK_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

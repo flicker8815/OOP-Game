@@ -35,11 +35,11 @@ namespace game_framework {
 	void CPlayer::Initialize()
 	{
 		x = 500;
-		y = 500;
+		y = 620;
 		g = 0;
-		vy = 15;
-		floorY = 300;
-		jumpY = 150;
+		vy = 10;
+		floorY = 620;
+		jumpY = 180;
 		jumpflag = false;
 	}
 

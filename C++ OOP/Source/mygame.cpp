@@ -180,10 +180,10 @@ namespace game_framework {
 		// 移動背景圖的座標
 		//
 
-		if (gamemap.gametrack.Left() > -1800)
+		if (gamemap.gametrack.Left() > -14480)
 			gamemap.SetTopLeft(gamemap.gametrack.Left() - 10, 0);
 
-		if (gamemap.gametrack.Left() < -1800)
+		if (gamemap.gametrack.Left() < -14480)
 			gamemap.gametrack.SetTopLeft(0, 0);
 
 		gamemap.gametrack.SetTopLeft(gamemap.gametrack.Left(), gamemap.gametrack.Top() + 1);
