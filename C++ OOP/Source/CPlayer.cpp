@@ -14,7 +14,7 @@ namespace game_framework {
 
 	int CPlayer::GetX1()
 	{
-		return x;
+		return virtualx;
 	}
 
 	int CPlayer::GetY1()
@@ -35,11 +35,12 @@ namespace game_framework {
 	void CPlayer::Initialize()
 	{
 		x = 500;
+		virtualx = 500;
 		y = 620;
 		g = 0;
 		vy = 10;
 		floorY = 620;
-		jumpY = 180;
+		jumpY = 300;
 		jumpflag = false;
 	}
 
@@ -49,19 +50,25 @@ namespace game_framework {
 		player.AddBitmap(IDB_C2, RGB(255, 255, 255));
 	}
 
+	void CPlayer::SetX(int x) { 
+		virtualx = x;
+	}
+
 	void CPlayer::Jump() {
-			if (jumpflag) {
-				y -= (vy + g);	
-				if (y <= floorY - jumpY)
-					vy = -1 * vy;
-				else if (y > floorY) {
-					vy = -1 * vy;
-					jumpflag = false;
-					y = floorY;
-				}
-				if (y % 40 == 0)
-					SwitchImage();
+		if (jumpflag) {
+			y -= (vy + g);
+			if (y <= floorY - jumpY)
+				vy = -1 * vy;
+			else if (y > floorY) {
+				vy = -1 * vy;
+				jumpflag = false;
+				y = floorY;
 			}
+			if (y == floorY - jumpY + 30)
+				SwitchImage();
+			if (y == floorY - jumpY)
+				SwitchImage();
+		}
 	}
 
 	void CPlayer::SetXY(int nx, int ny)

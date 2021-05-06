@@ -15,12 +15,13 @@ namespace game_framework {
 		void SetXY(int nx, int ny);
 		void setFloorY(int);
 		bool jumpflag;
+		void SetX(int);
 
 	protected:
 		CAnimation player;
-		
 		int x;
 		int y;
+		int virtualx;
 		int vy;
 		int g;
 		int floorY;

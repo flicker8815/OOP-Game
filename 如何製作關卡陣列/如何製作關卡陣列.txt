@@ -1,0 +1,15 @@
+https://lvgl.io/tools/imageconverter
+
+https://javl.github.io/image2cpp/
+ 
+1) 將遊戲背景的bmp檔案轉至 https://javl.github.io/image2cpp/
+背景為白色
+
+2) 將轉出來的圖片下載(testbmp.png) 修改成 障礙物為紅色 平台為黑色 背景為白色 如(testbmp.bmp樣)的圖片，此時還是png檔案 
+，並用小畫家將寬高除以20倍，再轉成bmp檔案
+
+3) https://lvgl.io/tools/imageconverter 放到這裡 轉成陣列 選項都是預設就行
+
+4) 將轉出來的.c檔案打開 複製第一個陣列來修改  背景白色為0 黑色為1 紅色為2 如 test.c檔樣式
+
+5) 將他修成二維陣列 一個關卡完成

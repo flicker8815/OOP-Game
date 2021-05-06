@@ -5,7 +5,7 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "mygame.h"
-
+#include <iostream>
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -180,18 +180,33 @@ namespace game_framework {
 		// 移動背景圖的座標
 		//
 
-		if (gamemap.gametrack.Left() > -14480)
+		if (gamemap.gametrack.Left() > -14480) {
 			gamemap.SetTopLeft(gamemap.gametrack.Left() - 10, 0);
-
-		if (gamemap.gametrack.Left() < -14480)
-			gamemap.gametrack.SetTopLeft(0, 0);
+			c_player.SetX(c_player.GetX1() + 10);
+		}
 
 		gamemap.gametrack.SetTopLeft(gamemap.gametrack.Left(), gamemap.gametrack.Top() + 1);
-	
+		
 		//
 		// 移動player
 		//
 		c_player.Jump();
+
+		//
+		// 偵測player碰撞物
+		//
+
+		if (gamemap.test_map[c_player.GetY1() / 20][c_player.GetX1() / 20] == 2) {
+			gamemap.SetTopLeft(0, 0);
+			c_player.SetX(500);
+			c_player.SetXY(500, 620);
+			c_player.setFloorY(620);
+		}
+
+		if (gamemap.test_map[c_player.GetY1() / 20][c_player.GetX1() / 20] == 0) {
+			c_player.setFloorY(c_player.GetY1());
+			c_player.SetXY(500, c_player.GetY1());
+		}
 	}
 	void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	{
