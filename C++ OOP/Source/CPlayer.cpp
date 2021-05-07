@@ -38,9 +38,9 @@ namespace game_framework {
 		virtualx = 500;
 		y = 620;
 		g = 0;
-		vy = 10;
+		vy = 20;
 		floorY = 620;
-		jumpY = 300;
+		jumpY = 200;
 		jumpflag = false;
 	}
 
@@ -64,7 +64,7 @@ namespace game_framework {
 				jumpflag = false;
 				y = floorY;
 			}
-			if (y == floorY - jumpY + 30)
+			if (y == floorY - jumpY + 40)
 				SwitchImage();
 			if (y == floorY - jumpY)
 				SwitchImage();
@@ -73,6 +73,7 @@ namespace game_framework {
 
 	void CPlayer::SetXY(int nx, int ny)
 	{
+		if (ny >= 620) ny = 620;
 		x = nx; y = ny;
 	}
 
@@ -86,6 +87,7 @@ namespace game_framework {
 	}
 
 	void CPlayer::setFloorY(int y) {
+		if (y >= 620) y = 620;
 		floorY = y;
 	}
 }

@@ -181,8 +181,8 @@ namespace game_framework {
 		//
 
 		if (gamemap.gametrack.Left() > -14480) {
-			gamemap.SetTopLeft(gamemap.gametrack.Left() - 10, 0);
-			c_player.SetX(c_player.GetX1() + 10);
+			gamemap.SetTopLeft(gamemap.gametrack.Left() - 20, 0);
+			c_player.SetX(c_player.GetX1() + 20);
 		}
 
 		gamemap.gametrack.SetTopLeft(gamemap.gametrack.Left(), gamemap.gametrack.Top() + 1);
@@ -195,17 +195,22 @@ namespace game_framework {
 		//
 		// 偵測player碰撞物
 		//
-
-		if (gamemap.test_map[c_player.GetY1() / 20][c_player.GetX1() / 20] == 2) {
+		int temp = gamemap.test_map[c_player.GetY1() / 20][c_player.GetX1() / 20];
+		if (temp == 2) {
 			gamemap.SetTopLeft(0, 0);
 			c_player.SetX(500);
 			c_player.SetXY(500, 620);
 			c_player.setFloorY(620);
 		}
-
-		if (gamemap.test_map[c_player.GetY1() / 20][c_player.GetX1() / 20] == 0) {
+		else if (temp == 0) {
 			c_player.setFloorY(c_player.GetY1());
 			c_player.SetXY(500, c_player.GetY1());
+		}
+		else if (temp == 1 && !c_player.jumpflag) {
+			if (c_player.GetY1() < 700) {
+				c_player.SetXY(500, c_player.GetY1() + 20);
+				c_player.setFloorY(c_player.GetY1() + 20);
+			}
 		}
 	}
 	void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
