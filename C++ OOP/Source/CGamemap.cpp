@@ -8,12 +8,13 @@
 
 namespace game_framework {
 
-	CGamemap::CGamemap() : X(20), Y(40), MW(120), MH(100)
+	CGamemap::CGamemap(int n) : mapnum(n)
 	{
 
 	}
 	void CGamemap::LoadBitmap() {
-		gametrack.LoadBitmap(IDB_TRACK_1);
+		if(mapnum == 1)
+			gametrack.LoadBitmap(IDB_TRACK_1);
 	}	
 
 	void CGamemap::OnShow() {

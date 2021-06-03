@@ -110,7 +110,7 @@ IDB_MENULEVEL3          BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP
 
 IDB_MENULEVEL4          BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\LEVEL4.bmp"
 
-IDB_TRACK_1             BITMAP                  "\\\\Mac\\Home\\Desktop\\DESKTOP2\\OOP Game\\C++ OOP\\RES\\TRACK_1.bmp"
+IDB_TRACK_1             BITMAP                  "\\\\Mac\\Home\\Desktop\\TRACK_1.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

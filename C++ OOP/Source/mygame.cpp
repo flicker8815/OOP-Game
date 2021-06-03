@@ -6,8 +6,10 @@
 #include "gamelib.h"
 #include "mygame.h"
 #include <iostream>
+int game_map_num = 0;
 
 namespace game_framework {
+	CMenu menu;								// game menu
 	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
 	/////////////////////////////////////////////////////////////////////////////
@@ -50,6 +52,8 @@ namespace game_framework {
 			PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);	// 關閉遊戲
 		else if (nChar == KEY_LEFT_ARROW) {
 			menu.SwitchImage();
+			game_map_num++;
+			if (game_map_num > 4) game_map_num = 0;
 		}
 	}
 
@@ -120,6 +124,8 @@ namespace game_framework {
 
 	void CGameStateOver::OnShow()
 	{
+		game_map_num = 0;
+		menu.OnShow();
 		CDC *pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
 		CFont f, *fp;
 		f.CreatePointFont(160, "Times New Roman");	// 產生 font f; 160表示16 point的字
@@ -150,6 +156,8 @@ namespace game_framework {
 
 	void CGameStateRun::OnBeginState()
 	{
+		gamemap->mapnum = game_map_num;
+		gamemap->LoadBitmap();					// 載入背景的圖形
 		const int BALL_GAP = 90;
 		const int BALL_XY_OFFSET = 45;
 		const int BALL_PER_ROW = 7;
@@ -163,7 +171,8 @@ namespace game_framework {
 			int y_pos = i / BALL_PER_ROW;
 			
 		}
-		gamemap.SetTopLeft(0, 0);			// 設定背景的起始座標
+		
+		gamemap->SetTopLeft(0, 0);			// 設定背景的起始座標
 		CAudio::Instance()->Play(AUDIO_LAKE, true);			// 撥放 WAVE
 		CAudio::Instance()->Play(AUDIO_DING, false);		// 撥放 WAVE
 		CAudio::Instance()->Play(AUDIO_NTUT, true);			// 撥放 MIDI
@@ -180,12 +189,12 @@ namespace game_framework {
 		// 移動背景圖的座標
 		//
 
-		if (gamemap.gametrack.Left() > -14480) {
-			gamemap.SetTopLeft(gamemap.gametrack.Left() - 20, 0);
+		if (gamemap->gametrack.Left() > -14480) {
+			gamemap->SetTopLeft(gamemap->gametrack.Left() - 20, 0);
 			c_player.SetX(c_player.GetX1() + 20);
 		}
 
-		gamemap.gametrack.SetTopLeft(gamemap.gametrack.Left(), gamemap.gametrack.Top() + 1);
+		gamemap->gametrack.SetTopLeft(gamemap->gametrack.Left(), gamemap->gametrack.Top() + 1);
 		
 		//
 		// 移動player
@@ -195,12 +204,13 @@ namespace game_framework {
 		//
 		// 偵測player碰撞物
 		//
-		int temp = gamemap.test_map[c_player.GetY1() / 20][c_player.GetX1() / 20];
+		int temp = gamemap->test_map[c_player.GetY1() / 20][c_player.GetX1() / 20];
 		if (temp == 2) {
-			gamemap.SetTopLeft(0, 0);
+			gamemap->SetTopLeft(0, 0);
 			c_player.SetX(500);
 			c_player.SetXY(500, 620);
 			c_player.setFloorY(620);
+			GotoGameState(GAME_STATE_OVER);
 		}
 		else if (temp == 0) {
 			c_player.setFloorY(c_player.GetY1());
@@ -215,6 +225,7 @@ namespace game_framework {
 	}
 	void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	{
+		gamemap = new CGamemap(game_map_num);
 		//
 		// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 		//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
@@ -223,7 +234,7 @@ namespace game_framework {
 		//
 		// 開始載入資料
 		//
-		gamemap.LoadBitmap();					// 載入背景的圖形
+		
 
 		c_player.LoadBitmap();								// 載入player的圖形
 		//
@@ -293,7 +304,7 @@ namespace game_framework {
 		//
 		//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 		//
-		gamemap.OnShow();				// 貼上背景圖
+		gamemap->OnShow();				// 貼上背景圖
 
 		c_player.OnShow();
 	}

@@ -41,11 +41,12 @@
 #include "CPlayer.h"
 #include "CGamemap.h"
 #include "CMenu.h"
+
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
 	// Constants
 	/////////////////////////////////////////////////////////////////////////////
-
+	
 	enum AUDIO_ID {				// 定義各種音效的編號
 		AUDIO_DING,				// 0
 		AUDIO_LAKE,				// 1
@@ -58,16 +59,18 @@ namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
 
 	class CGameStateInit : public CGameState {
+    
 	public:
 		CGameStateInit(CGame *g);
 		void OnInit();  								// 遊戲的初值及圖形設定
 		void OnBeginState();							// 設定每次重玩所需的變數
 		void OnKeyUp(UINT, UINT, UINT); 				// 處理鍵盤Up的動作
 		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
+		
 	protected:
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		CMenu menu;								// game menu
+		
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
@@ -93,7 +96,7 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		CGamemap	gamemap;	// 背景圖
+		CGamemap	*gamemap;	// 背景圖
 		CPlayer c_player;
 		const int		NUMBALLS;	//球的總數
 		
